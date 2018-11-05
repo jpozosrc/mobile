@@ -86,7 +86,8 @@
             "scripts": [],
             "assets": [
               "src/assets",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/Web.config"
             ]
           }
         },
