@@ -20,8 +20,9 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/assets",
-              "src/manifest.json", 
-              "src/web.config"
+              "src/manifest.json",
+              "src/web.config",
+              "src/manifest.json"
             ],
             "styles": [
               "src/styles.css"
@@ -87,7 +88,8 @@
             "assets": [
               "src/assets",
               "src/manifest.json",
-              "src/Web.config"
+              "src/Web.config",
+              "src/manifest.json"
             ]
           }
         },
