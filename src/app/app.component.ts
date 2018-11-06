@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
+    iosPopup();
+
   }
 
 }
@@ -29,4 +31,4 @@ function iosPopup() {
     this.setState({ showInstallMessage: true });
   }
 
-}
+} 
