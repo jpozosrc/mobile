@@ -8,7 +8,7 @@
       "updateMode": "prefetch",
       "urls": [
         "/index.html",
-        "/main.2db62b5cffcd60309539.js",
+        "/main.cb20000b997ccfea7431.js",
         "/polyfills.c6871e56cb80756a5498.js",
         "/runtime.ec2944dd8b20ec099bf3.js"
       ],
@@ -28,7 +28,8 @@
         "/assets/icons/icon-512x512.png",
         "/assets/icons/icon-72x72.png",
         "/assets/icons/icon-96x96.png",
-        "/assets/logo.png"
+        "/assets/logo.png",
+        "/assets/quagga.min.js"
       ],
       "patterns": []
     }
@@ -45,8 +46,9 @@
     "/assets/icons/icon-72x72.png": "3544407f46eb7b253f193387fecaf532f3a12507",
     "/assets/icons/icon-96x96.png": "9b6b525a7f280113f999d422f1e6700ef63aaa85",
     "/assets/logo.png": "4ca5c8c3dd1eecee02cc8831a421be25db2a360a",
-    "/index.html": "371f863f9a99590931215584dcdf874f55ef25e9",
-    "/main.2db62b5cffcd60309539.js": "cbe98528b9e352b1419e7ae142732d9234f74b5d",
+    "/assets/quagga.min.js": "196a19582e98211f70af4d6b308cc4f548aa4f6e",
+    "/index.html": "e2d7bcf8af0eafd0f2946a38329e0406bcb9cff3",
+    "/main.cb20000b997ccfea7431.js": "d47e26eb48b071154fc688b5a68374bf10041d0b",
     "/polyfills.c6871e56cb80756a5498.js": "ce68d153e9b9b6d26b625069c0ee99ae09c6f255",
     "/runtime.ec2944dd8b20ec099bf3.js": "b62956c2192bfe5516d6374e753773901ed50ec5"
   },

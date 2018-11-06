@@ -1,3 +1,7 @@
+a:visited {
+    color: #ffffff;
+}
+
 .header {
     background-image: url('/assets/logo.png');
     background-repeat: no-repeat;
@@ -10,22 +14,4 @@
     width: 32px;
     background-image: url('/assets/hamburger.png');
     float: right;
-}
-
-.menu div {
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 14pt;
-    border-radius: 4px;
-    color: #ffffff;
-    background-color: rgb(32, 68, 122);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.menu div a {
-    text-decoration: none;
-}
-
-a:visited {
-    color: #ffffff;
 }
