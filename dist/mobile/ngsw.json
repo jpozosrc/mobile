@@ -1,0 +1,73 @@
+{
+  "configVersion": 1,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/index.html",
+        "/main.a36c2bda1e8ca1f2e349.js",
+        "/polyfills.c6871e56cb80756a5498.js",
+        "/runtime.ec2944dd8b20ec099bf3.js"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/hamburger.png",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/logo.png",
+        "/assets/quagga.min.js"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/hamburger.png": "edd9b364be708c55b7b0cae72f09957d69f5177d",
+    "/assets/icons/icon-128x128.png": "d489b64788794f7219ff71411829fb7b778a39bb",
+    "/assets/icons/icon-144x144.png": "128bb13a7b035a9c320632b6870f88ca35f82928",
+    "/assets/icons/icon-152x152.png": "4a33c732fc7b6c4cb4a165896d730f218e884ae4",
+    "/assets/icons/icon-192x192.png": "3eff4d30511686459d700cb5b85699ce4323643f",
+    "/assets/icons/icon-384x384.png": "23d004b015721803f24313d6e80c197d06c2275e",
+    "/assets/icons/icon-512x512.png": "9a6b7b25e48402a589afe9faaa9e6d0da0781887",
+    "/assets/icons/icon-72x72.png": "3544407f46eb7b253f193387fecaf532f3a12507",
+    "/assets/icons/icon-96x96.png": "9b6b525a7f280113f999d422f1e6700ef63aaa85",
+    "/assets/logo.png": "4ca5c8c3dd1eecee02cc8831a421be25db2a360a",
+    "/assets/quagga.min.js": "196a19582e98211f70af4d6b308cc4f548aa4f6e",
+    "/index.html": "a9a0818a3778fbc160c2997b6ff3ac44a7a01751",
+    "/main.a36c2bda1e8ca1f2e349.js": "ba36e3aa1f52f794eda2045c64e125af2c49fb82",
+    "/polyfills.c6871e56cb80756a5498.js": "ce68d153e9b9b6d26b625069c0ee99ae09c6f255",
+    "/runtime.ec2944dd8b20ec099bf3.js": "b62956c2192bfe5516d6374e753773901ed50ec5"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
