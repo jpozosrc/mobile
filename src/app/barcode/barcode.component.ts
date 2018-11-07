@@ -40,23 +40,23 @@ export class BarcodeComponent implements OnInit {
       startVideo();
       Quagga.start();
 
-      Quagga.onDetected(function(result) {
-        
-        if(this.barcode != result.codeResult.code) {
-          var ul = document.getElementById('barcode-result');
-          var li = document.createElement("li");
-          li.innerText = result.codeResult.code;
-          ul.appendChild(li);
-          //document.getElementById('barcode-result').innerText = 'Code: ' +  result.codeResult.code;
-        }
-        
-        this.barcode = result.codeResult.code;
-      });
+    });
 
-      Quagga.onProcessed(function(result) {
-        drawBoxes(result)
-      });
-    
+    Quagga.onDetected(function(result) {
+        
+      if(this.barcode != result.codeResult.code) {
+        var ul = document.getElementById('barcode-result');
+        var li = document.createElement("li");
+        li.innerText = result.codeResult.code;
+        ul.appendChild(li);
+        //document.getElementById('barcode-result').innerText = 'Code: ' +  result.codeResult.code;
+      }
+      
+      this.barcode = result.codeResult.code;
+    });
+
+    Quagga.onProcessed(function(result) {
+      drawBoxes(result)
     });
     
   }
