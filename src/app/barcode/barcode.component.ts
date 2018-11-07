@@ -18,28 +18,9 @@ export class BarcodeComponent implements OnInit {
   barcode : string = '';
  
   startScanner() : void {
-    let settings = {
-      decoder: { readers: ["code_128_reader", "code_39_reader"] },
-      locate: true,
-      inputStream: { 
-        name: 'Live', 
-        type: 'LiveStream', 
-        target: document.querySelector('#video-player')
-      },
-      
-      locator: { patchSize: "medium" },
-    };
+    
 
-    Quagga.init(settings, function(err) {
-      
-      if (err) {
-          console.log(err);
-          return
-      }
-      
-      startVideo();
-
-    });
+    startVideo();
     
   }
 
@@ -69,10 +50,34 @@ function startVideo() {
       video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
 
-      Quagga.start();
+      let settings = {
+        decoder: { readers: ["code_128_reader", "code_39_reader"] },
+        locate: true,
+        inputStream: { 
+          name: 'Live', 
+          type: 'LiveStream', 
+          target: document.querySelector('#video-player')
+        },
+        
+        locator: { patchSize: "medium" },
+      };
+
+      Quagga.init(settings, function(err) {
+      
+        if (err) {
+            console.log(err);
+            return
+        }
+
+        Quagga.start();
+      });
+
+
+      
 
       Quagga.onDetected(function(result) {
-        
+
+        console.log(result.codeResult.code);
         if(this.barcode != result.codeResult.code) {
           var ul = document.getElementById('barcode-result');
           var li = document.createElement("li");
