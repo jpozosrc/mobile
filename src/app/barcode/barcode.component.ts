@@ -7,7 +7,6 @@ declare var Quagga: any;
   styleUrls: ['./barcode.component.css']
 })
 
-
 export class BarcodeComponent implements OnInit {
 
   constructor() { }
@@ -18,16 +17,12 @@ export class BarcodeComponent implements OnInit {
   barcode : string = '';
  
   startScanner() : void {
-    
-
     startVideo();
-    
   }
 
   stopScanner() : void {
     stopVideo();
   }
-  
 
 }
 
@@ -50,6 +45,7 @@ function startVideo() {
       video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
 
+      /*
       let settings = {
         decoder: { readers: ["code_128_reader", "code_39_reader"] },
         locate: true,
@@ -62,6 +58,7 @@ function startVideo() {
         locator: { patchSize: "medium" },
       };
 
+   
       Quagga.init(settings, function(err) {
       
         if (err) {
@@ -70,7 +67,7 @@ function startVideo() {
         }
 
         Quagga.start();
-           
+      
       });
 
       Quagga.onDetected(function(result) {
@@ -111,7 +108,7 @@ function startVideo() {
           }
         }
   
-      });
+      }); */
 
     })
     .catch(function(err){
