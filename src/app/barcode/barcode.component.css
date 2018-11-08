@@ -41,6 +41,7 @@ video {
     border: 4px solid #000;
 }
 
+/*
 canvas.drawingBuffer {
     border-radius: 6px;
     width: 320px; 
@@ -48,7 +49,7 @@ canvas.drawingBuffer {
     position: absolute;
     left: 22px;
     top: 16px;
-}
+}*/
 
 .button-container {
     margin-top: 270px;
