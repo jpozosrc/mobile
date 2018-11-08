@@ -71,57 +71,48 @@ function startVideo() {
 
         Quagga.start();
       
-
-
-        Quagga.onDetected(function(result) {
-
-          console.log(result.codeResult.code);
-          if(this.barcode != result.codeResult.code) {
-            var ul = document.getElementById('barcode-result');
-            var li = document.createElement("li");
-            li.innerText = result.codeResult.code;
-            ul.appendChild(li);
-            //document.getElementById('barcode-result').innerText = 'Code: ' +  result.codeResult.code;
-          }
-          
-          this.barcode = result.codeResult.code;
-        });
-    
-        Quagga.onProcessed(function(result) {
-          
-          var drawingCtx = Quagga.canvas.ctx.overlay,
-          drawingCanvas = Quagga.canvas.dom.overlay;
-    
-          if (result) {
-            if (result.boxes) {
-                drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
-                result.boxes.filter(function (box) {
-                    return box !== result.box;
-                }).forEach(function (box) {
-                    Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 4});
-                });
-            }
-    
-            if (result.box) {
-                Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 4});
-            }
-    
-            if (result.codeResult && result.codeResult.code) {
-                Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 6});
-            }
-          }
-    
-        });
-
-
-
       
       });
-//--------------------------
 
-      
+      Quagga.onDetected(function(result) {
 
+        console.log(result.codeResult.code);
+        if(this.barcode != result.codeResult.code) {
+          var ul = document.getElementById('barcode-result');
+          var li = document.createElement("li");
+          li.innerText = result.codeResult.code;
+          ul.appendChild(li);
+          //document.getElementById('barcode-result').innerText = 'Code: ' +  result.codeResult.code;
+        }
+        
+        this.barcode = result.codeResult.code;
+      });
   
+      Quagga.onProcessed(function(result) {
+        
+        var drawingCtx = Quagga.canvas.ctx.overlay,
+        drawingCanvas = Quagga.canvas.dom.overlay;
+  
+        if (result) {
+          if (result.boxes) {
+              drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+              result.boxes.filter(function (box) {
+                  return box !== result.box;
+              }).forEach(function (box) {
+                  Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 4});
+              });
+          }
+  
+          if (result.box) {
+              Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 4});
+          }
+  
+          if (result.codeResult && result.codeResult.code) {
+              Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 6});
+          }
+        }
+  
+      });
 
     })
     .catch(function(err){

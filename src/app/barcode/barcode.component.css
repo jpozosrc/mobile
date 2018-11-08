@@ -33,8 +33,8 @@ div#scanner {
 
 video {
     border-radius: 6px;
-    width: 320px; 
-    height: 240px;
+    /*width: 320px; 
+    height: 240px;*/
     position: absolute;
     left: 18px;
     top: 12px;
@@ -42,14 +42,14 @@ video {
     z-index: 1;
 }
 
-canvas.drawing, canvas.drawingBuffer {
+canvas.drawingBuffer {
     border-radius: 6px;
-    width: 320px; 
-    height: 240px;
+    /*width: 320px; 
+    height: 240px;*/
     position: absolute;
     left: 22px;
     top: 16px;
-    z-index: 9999;
+    z-index: 99999;
 }
 
 .button-container {
