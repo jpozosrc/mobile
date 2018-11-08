@@ -45,7 +45,7 @@ function startVideo() {
       video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
 
-      /*
+      
       let settings = {
         decoder: { readers: ["code_128_reader", "code_39_reader"] },
         locate: true,
@@ -69,7 +69,7 @@ function startVideo() {
         Quagga.start();
       
       });
-
+/*
       Quagga.onDetected(function(result) {
 
         console.log(result.codeResult.code);
