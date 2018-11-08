@@ -57,18 +57,25 @@ function startVideo() {
     }
 
     Quagga.start();
+
+    var constraints = { 
+      audio: false,
+      video: { facingMode: "environment" }
+    };
+    
+    navigator.mediaDevices.getUserMedia(constraints)
+      .then(function(stream) {
+        video = document.getElementById('video-player') as HTMLVideoElement;
+        video.srcObject = stream;
+      })
+      .catch(function(err){
+        alert(err);
+        console.log(err)
+    })
   
   });
 
-  var constraints = { 
-    audio: false,
-    video: { facingMode: "environment" }
-  };
   
-  navigator.mediaDevices.getUserMedia(constraints)
-    .then(function(stream) {
-      video = document.getElementById('video-player') as HTMLVideoElement;
-      video.srcObject = stream;
 
       
       
@@ -111,13 +118,13 @@ function startVideo() {
           }
         }
   
-      }); */
+      }); 
 
     })
     .catch(function(err){
       alert(err);
       console.log(err)
-    })
+    })*/
    
 }
 
