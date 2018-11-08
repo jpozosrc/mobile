@@ -50,6 +50,10 @@ function startVideo() {
       video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
 
+      video.onloadedmetadata = function(e) {
+        video.play();
+      };
+
       let settings = {
         decoder: { readers: ["code_128_reader", "code_39_reader"] },
         locate: true,
