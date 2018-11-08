@@ -33,8 +33,8 @@ div#scanner {
 
 video {
     border-radius: 6px;
-    width: 640px; 
-    height: 480px;
+    width: 320px; 
+    height: 240px;
     position: absolute;
     left: 18px;
     top: 12px;
@@ -43,8 +43,8 @@ video {
 
 canvas.drawingBuffer {
     border-radius: 6px;
-    width: 640px; 
-    height: 480px;
+    width: 320px; 
+    height: 240px;
     position: absolute;
     left: 22px;
     top: 16px;
