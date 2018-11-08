@@ -233,6 +233,17 @@ function startVideo() {
             return;
         }
         Quagga.start();
+        Quagga.onDetected(function (result) {
+            console.log(result.codeResult.code);
+            if (this.barcode != result.codeResult.code) {
+                var ul = document.getElementById('barcode-result');
+                var li = document.createElement("li");
+                li.innerText = result.codeResult.code;
+                ul.appendChild(li);
+                //document.getElementById('barcode-result').innerText = 'Code: ' +  result.codeResult.code;
+            }
+            this.barcode = result.codeResult.code;
+        });
         var constraints = {
             audio: false,
             video: { facingMode: "environment" }
