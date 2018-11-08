@@ -217,6 +217,23 @@ function startVideo() {
         alert('UserMedia not supported');
         return;
     }
+    var settings = {
+        decoder: { readers: ["code_128_reader", "code_39_reader"] },
+        locate: true,
+        inputStream: {
+            name: 'Live',
+            type: 'LiveStream',
+            target: document.querySelector('#video-player')
+        },
+        locator: { patchSize: "medium" },
+    };
+    Quagga.init(settings, function (err) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        Quagga.start();
+    });
     var constraints = {
         audio: false,
         video: { facingMode: "environment" }
@@ -225,23 +242,6 @@ function startVideo() {
         .then(function (stream) {
         video = document.getElementById('video-player');
         video.srcObject = stream;
-        var settings = {
-            decoder: { readers: ["code_128_reader", "code_39_reader"] },
-            locate: true,
-            inputStream: {
-                name: 'Live',
-                type: 'LiveStream',
-                target: document.querySelector('#video-player')
-            },
-            locator: { patchSize: "medium" },
-        };
-        Quagga.init(settings, function (err) {
-            if (err) {
-                console.log(err);
-                return;
-            }
-            Quagga.start();
-        });
         /*
               Quagga.onDetected(function(result) {
         

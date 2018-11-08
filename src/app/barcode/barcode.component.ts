@@ -35,6 +35,31 @@ function startVideo() {
     return;
   }
 
+
+  let settings = {
+    decoder: { readers: ["code_128_reader", "code_39_reader"] },
+    locate: true,
+    inputStream: { 
+      name: 'Live', 
+      type: 'LiveStream', 
+      target: document.querySelector('#video-player')
+    },
+    
+    locator: { patchSize: "medium" },
+  };
+
+
+  Quagga.init(settings, function(err) {
+  
+    if (err) {
+        console.log(err);
+        return
+    }
+
+    Quagga.start();
+  
+  });
+
   var constraints = { 
     audio: false,
     video: { facingMode: "environment" }
@@ -46,29 +71,7 @@ function startVideo() {
       video.srcObject = stream;
 
       
-      let settings = {
-        decoder: { readers: ["code_128_reader", "code_39_reader"] },
-        locate: true,
-        inputStream: { 
-          name: 'Live', 
-          type: 'LiveStream', 
-          target: document.querySelector('#video-player')
-        },
-        
-        locator: { patchSize: "medium" },
-      };
-
-   
-      Quagga.init(settings, function(err) {
       
-        if (err) {
-            console.log(err);
-            return
-        }
-
-        Quagga.start();
-      
-      });
 /*
       Quagga.onDetected(function(result) {
 
