@@ -1,6 +1,6 @@
 <div id="scanner">
-  <div class="video-container">
-      <video id="video-player" autoplay="true" preload="auto" playsinline="true">
+  <div class="video-container viewport">
+      <video autoplay="true" preload="auto" playsinline="true" width="320" height="240">
           Your browser does not support HTML5 video.
       </video>
       <canvas id="scanner-canvas" class="drawingBuffer"></canvas> <!-- Overlay -->
@@ -13,8 +13,10 @@
         
       </ul>
   </div>
-  
+
   <select name="input-stream_constraints" id="deviceSelection"></select>
 </div>
+
+<div id="interactive" class="viewport"></div>
 
 

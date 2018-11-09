@@ -163,7 +163,7 @@ module.exports = "h3 {\r\n    text-align: center;\r\n}\r\n\r\nh2 {\r\n    font-s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"scanner\">\n  <div class=\"video-container\">\n      <video id=\"video-player\" autoplay=\"true\" preload=\"auto\" playsinline=\"true\">\n          Your browser does not support HTML5 video.\n      </video>\n      <canvas id=\"scanner-canvas\" class=\"drawingBuffer\"></canvas> <!-- Overlay -->\n  </div>\n\n  <div class=\"button-container\">\n      <button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n      <button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n      <ul id=\"barcode-result\">\n        \n      </ul>\n  </div>\n  \n  <select name=\"input-stream_constraints\" id=\"deviceSelection\"></select>\n</div>\n\n\n"
+module.exports = "<div id=\"scanner\">\n  <div class=\"video-container viewport\">\n      <video autoplay=\"true\" preload=\"auto\" playsinline=\"true\" width=\"320\" height=\"240\">\n          Your browser does not support HTML5 video.\n      </video>\n      <canvas id=\"scanner-canvas\" class=\"drawingBuffer\"></canvas> <!-- Overlay -->\n  </div>\n\n  <div class=\"button-container\">\n      <button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n      <button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n      <ul id=\"barcode-result\">\n        \n      </ul>\n  </div>\n\n  <select name=\"input-stream_constraints\" id=\"deviceSelection\"></select>\n</div>\n\n<div id=\"interactive\" class=\"viewport\"></div>\n\n\n"
 
 /***/ }),
 
@@ -190,15 +190,51 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var BarcodeComponent = /** @class */ (function () {
     function BarcodeComponent() {
-        this.barcode = '';
     }
     BarcodeComponent.prototype.ngOnInit = function () {
+        initCameraSelection();
     };
     BarcodeComponent.prototype.startScanner = function () {
-        start();
+        var settings = {
+            decoder: { readers: ["code_128_reader", "code_39_reader"] },
+            frequency: 10,
+            locate: true,
+            inputStream: {
+                type: 'LiveStream',
+                target: document.querySelector('#video-player'),
+            },
+            locator: { patchSize: "medium", halfSample: true },
+            numOfWorkers: 2
+        };
+        Quagga.init(settings, function (err) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            Quagga.start();
+        });
+        Quagga.onProcessed(function (result) {
+            var drawingCtx = Quagga.canvas.ctx.overlay, drawingCanvas = Quagga.canvas.dom.overlay;
+            if (result) {
+                if (result.boxes) {
+                    drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+                    result.boxes.filter(function (box) {
+                        return box !== result.box;
+                    }).forEach(function (box) {
+                        Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 2 });
+                    });
+                }
+                if (result.box) {
+                    Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "#00F", lineWidth: 2 });
+                }
+                if (result.codeResult && result.codeResult.code) {
+                    Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 3 });
+                }
+            }
+        });
     };
     BarcodeComponent.prototype.stopScanner = function () {
-        stopVideo();
+        Quagga.stop();
     };
     BarcodeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -211,153 +247,8 @@ var BarcodeComponent = /** @class */ (function () {
     return BarcodeComponent;
 }());
 
-var video = null;
-function start() {
-    /*
-    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      alert('UserMedia not supported')
-      return;
-    }*/
-    var settings = {
-        decoder: { readers: ["code_128_reader", "code_39_reader"] },
-        locate: true,
-        numOfWorkers: 4,
-        inputStream: {
-            name: 'Live',
-            type: 'LiveStream',
-            target: document.querySelector('#video-player')
-        },
-        locator: { patchSize: "medium" },
-    };
-    Quagga.init(settings, function (err) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        initCamera();
-        checkCapabilities();
-        Quagga.start();
-    });
-    Quagga.onDetected(function (result) {
-        console.log(result.codeResult.code);
-        if (this.barcode != result.codeResult.code) {
-            var ul = document.getElementById('barcode-result');
-            var li = document.createElement("li");
-            li.innerText = result.codeResult.code;
-            ul.appendChild(li);
-            //document.getElementById('barcode-result').innerText = 'Code: ' +  result.codeResult.code;
-        }
-        this.barcode = result.codeResult.code;
-    });
-    Quagga.onProcessed(function (result) {
-        var drawingCtx = Quagga.canvas.ctx.overlay, drawingCanvas = Quagga.canvas.dom.overlay;
-        if (result) {
-            if (result.boxes) {
-                drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
-                result.boxes.filter(function (box) {
-                    return box !== result.box;
-                }).forEach(function (box) {
-                    Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 4 });
-                });
-            }
-            if (result.box) {
-                Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 4 });
-            }
-            if (result.codeResult && result.codeResult.code) {
-                Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 6 });
-            }
-        }
-    });
-    /*
-    
-        var constraints = {
-          audio: false,
-          video: { facingMode: "environment" }
-        };
-        
-        navigator.mediaDevices.getUserMedia(constraints)
-          .then(function(stream) {
-            
-            video = document.getElementById('video-player') as HTMLVideoElement;
-            video.srcObject = stream;
-          })
-          .catch(function(err){
-            alert(err);
-            console.log(err)
-        })
-      
-    
-    */
-    /*
-          Quagga.onDetected(function(result) {
-    
-            console.log(result.codeResult.code);
-            if(this.barcode != result.codeResult.code) {
-              var ul = document.getElementById('barcode-result');
-              var li = document.createElement("li");
-              li.innerText = result.codeResult.code;
-              ul.appendChild(li);
-              //document.getElementById('barcode-result').innerText = 'Code: ' +  result.codeResult.code;
-            }
-            
-            this.barcode = result.codeResult.code;
-          });
-      
-          Quagga.onProcessed(function(result) {
-            
-            var drawingCtx = Quagga.canvas.ctx.overlay,
-            drawingCanvas = Quagga.canvas.dom.overlay;
-      
-            if (result) {
-              if (result.boxes) {
-                  drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
-                  result.boxes.filter(function (box) {
-                      return box !== result.box;
-                  }).forEach(function (box) {
-                      Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 4});
-                  });
-              }
-      
-              if (result.box) {
-                  Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 4});
-              }
-      
-              if (result.codeResult && result.codeResult.code) {
-                  Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 6});
-              }
-            }
-      
-          });
-    
-        })
-        .catch(function(err){
-          alert(err);
-          console.log(err)
-        })*/
-}
-function stopVideo() {
-    try {
-        Quagga.stop();
-    }
-    catch (e) {
-        alert(e);
-    }
-    if (video.srcObject) {
-        var tracks = video.srcObject.getTracks();
-        if (tracks && tracks[0]) {
-            var track = tracks[0];
-            track.stop();
-        }
-    }
-    video.srcObject = null;
-    var canvas = document.getElementById('scanner-canvas');
-    var context = canvas.getContext('2d');
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    document.getElementById('barcode-result').innerText = '';
-}
-function initCamera() {
+function initCameraSelection() {
     var streamLabel = Quagga.CameraAccess.getActiveStreamLabel();
-    console.log(streamLabel);
     return Quagga.CameraAccess.enumerateVideoDevices()
         .then(function (devices) {
         function pruneText(text) {
@@ -375,15 +266,6 @@ function initCamera() {
             $deviceSelection.appendChild($option);
         });
     });
-}
-function checkCapabilities() {
-    var track = Quagga.CameraAccess.getActiveTrack();
-    var capabilities = {};
-    if (typeof track.getCapabilities === 'function') {
-        capabilities = track.getCapabilities();
-    }
-    //this.applySettingsVisibility('zoom', capabilities.zoom);
-    //this.applySettingsVisibility('torch', capabilities.torch);
 }
 
 
