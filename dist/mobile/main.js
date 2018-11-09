@@ -152,7 +152,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h3 {\r\n    text-align: center;\r\n}\r\n\r\nh2 {\r\n    font-size: 13pt;\r\n    display: inline;\r\n    margin-left: 12px;\r\n}\r\n\r\nselect {\r\n    padding: 5px;\r\n}\r\n\r\n.barcode-component {\r\n    width: 100%;\r\n}\r\n\r\nbutton {\r\n    padding: 10px;\r\n}\r\n\r\n.video-container {\r\n    width: 100%;\r\n}\r\n\r\ndiv#scanner {\r\n    position: absolute;\r\n    width: 100%;\r\n    top: 180px;\r\n}\r\n\r\nvideo {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n    height: 240px;\r\n    position: absolute;\r\n    left: 18px;\r\n    top: 12px;\r\n    border: 4px solid #000;\r\n    z-index: 1;\r\n}\r\n\r\ncanvas.drawingBuffer {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n    height: 240px;\r\n    position: absolute;\r\n    left: 22px;\r\n    top: 16px;\r\n    z-index: 9999;\r\n    \r\n}\r\n\r\n.button-container {\r\n    margin-top: 270px;\r\n    margin-left: 21px;\r\n}\r\n\r\n#barcode-result {\r\n    margin-left: 12px;\r\n    font-weight: bold;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYmFyY29kZS9iYXJjb2RlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxtQkFBbUI7Q0FDdEI7O0FBRUQ7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtDQUNyQjs7QUFFRDtJQUNJLGFBQWE7Q0FDaEI7O0FBRUQ7SUFDSSxZQUFZO0NBQ2Y7O0FBR0Q7SUFDSSxjQUFjO0NBQ2pCOztBQUVEO0lBQ0ksWUFBWTtDQUNmOztBQUdEO0lBQ0ksbUJBQW1CO0lBQ25CLFlBQVk7SUFDWixXQUFXO0NBQ2Q7O0FBRUQ7SUFDSSxtQkFBbUI7SUFDbkIsYUFBYTtJQUNiLGNBQWM7SUFDZCxtQkFBbUI7SUFDbkIsV0FBVztJQUNYLFVBQVU7SUFDVix1QkFBdUI7SUFDdkIsV0FBVztDQUNkOztBQUVEO0lBQ0ksbUJBQW1CO0lBQ25CLGFBQWE7SUFDYixjQUFjO0lBQ2QsbUJBQW1CO0lBQ25CLFdBQVc7SUFDWCxVQUFVO0lBQ1YsY0FBYzs7Q0FFakI7O0FBRUQ7SUFDSSxrQkFBa0I7SUFDbEIsa0JBQWtCO0NBQ3JCOztBQUVEO0lBQ0ksa0JBQWtCO0lBQ2xCLGtCQUFrQjtDQUNyQiIsImZpbGUiOiJzcmMvYXBwL2JhcmNvZGUvYmFyY29kZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaDMge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG5oMiB7XHJcbiAgICBmb250LXNpemU6IDEzcHQ7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICBtYXJnaW4tbGVmdDogMTJweDtcclxufVxyXG5cclxuc2VsZWN0IHtcclxuICAgIHBhZGRpbmc6IDVweDtcclxufVxyXG5cclxuLmJhcmNvZGUtY29tcG9uZW50IHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG5cclxuYnV0dG9uIHtcclxuICAgIHBhZGRpbmc6IDEwcHg7XHJcbn1cclxuXHJcbi52aWRlby1jb250YWluZXIge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcblxyXG5kaXYjc2Nhbm5lciB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHRvcDogMTgwcHg7XHJcbn1cclxuXHJcbnZpZGVvIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDZweDtcclxuICAgIHdpZHRoOiAzMjBweDsgXHJcbiAgICBoZWlnaHQ6IDI0MHB4O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgbGVmdDogMThweDtcclxuICAgIHRvcDogMTJweDtcclxuICAgIGJvcmRlcjogNHB4IHNvbGlkICMwMDA7XHJcbiAgICB6LWluZGV4OiAxO1xyXG59XHJcblxyXG5jYW52YXMuZHJhd2luZ0J1ZmZlciB7XHJcbiAgICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgICB3aWR0aDogMzIwcHg7IFxyXG4gICAgaGVpZ2h0OiAyNDBweDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGxlZnQ6IDIycHg7XHJcbiAgICB0b3A6IDE2cHg7XHJcbiAgICB6LWluZGV4OiA5OTk5O1xyXG4gICAgXHJcbn1cclxuXHJcbi5idXR0b24tY29udGFpbmVyIHtcclxuICAgIG1hcmdpbi10b3A6IDI3MHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDIxcHg7XHJcbn1cclxuXHJcbiNiYXJjb2RlLXJlc3VsdCB7XHJcbiAgICBtYXJnaW4tbGVmdDogMTJweDtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59Il19 */"
+module.exports = "h3 {\r\n    text-align: center;\r\n}\r\n\r\nh2 {\r\n    font-size: 13pt;\r\n    display: inline;\r\n    margin-left: 12px;\r\n}\r\n\r\nselect {\r\n    padding: 5px;\r\n}\r\n\r\n.barcode-component {\r\n    width: 100%;\r\n}\r\n\r\nbutton {\r\n    padding: 10px;\r\n}\r\n\r\n.video-container {\r\n    width: 100%;\r\n}\r\n\r\ndiv#scanner {\r\n    position: absolute;\r\n    width: 100%;\r\n    top: 150px;\r\n}\r\n\r\nvideo {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n    height: 240px;\r\n    position: absolute;\r\n    border: 4px solid #000;\r\n    z-index: 1;\r\n}\r\n\r\ncanvas.drawingBuffer {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n    height: 240px;\r\n    position: absolute;\r\n    z-index: 9999;\r\n    \r\n}\r\n\r\n.button-container {\r\n    margin-top: 270px;\r\n    margin-left: 21px;\r\n}\r\n\r\n#barcode-result {\r\n    margin-left: 12px;\r\n    font-weight: bold;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYmFyY29kZS9iYXJjb2RlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxtQkFBbUI7Q0FDdEI7O0FBRUQ7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtDQUNyQjs7QUFFRDtJQUNJLGFBQWE7Q0FDaEI7O0FBRUQ7SUFDSSxZQUFZO0NBQ2Y7O0FBR0Q7SUFDSSxjQUFjO0NBQ2pCOztBQUVEO0lBQ0ksWUFBWTtDQUNmOztBQUVEO0lBQ0ksbUJBQW1CO0lBQ25CLFlBQVk7SUFDWixXQUFXO0NBQ2Q7O0FBRUQ7SUFDSSxtQkFBbUI7SUFDbkIsYUFBYTtJQUNiLGNBQWM7SUFDZCxtQkFBbUI7SUFDbkIsdUJBQXVCO0lBQ3ZCLFdBQVc7Q0FDZDs7QUFFRDtJQUNJLG1CQUFtQjtJQUNuQixhQUFhO0lBQ2IsY0FBYztJQUNkLG1CQUFtQjtJQUNuQixjQUFjOztDQUVqQjs7QUFFRDtJQUNJLGtCQUFrQjtJQUNsQixrQkFBa0I7Q0FDckI7O0FBRUQ7SUFDSSxrQkFBa0I7SUFDbEIsa0JBQWtCO0NBQ3JCIiwiZmlsZSI6InNyYy9hcHAvYmFyY29kZS9iYXJjb2RlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJoMyB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbmgyIHtcclxuICAgIGZvbnQtc2l6ZTogMTNwdDtcclxuICAgIGRpc3BsYXk6IGlubGluZTtcclxuICAgIG1hcmdpbi1sZWZ0OiAxMnB4O1xyXG59XHJcblxyXG5zZWxlY3Qge1xyXG4gICAgcGFkZGluZzogNXB4O1xyXG59XHJcblxyXG4uYmFyY29kZS1jb21wb25lbnQge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcblxyXG5idXR0b24ge1xyXG4gICAgcGFkZGluZzogMTBweDtcclxufVxyXG5cclxuLnZpZGVvLWNvbnRhaW5lciB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuZGl2I3NjYW5uZXIge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICB0b3A6IDE1MHB4O1xyXG59XHJcblxyXG52aWRlbyB7XHJcbiAgICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgICB3aWR0aDogMzIwcHg7IFxyXG4gICAgaGVpZ2h0OiAyNDBweDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGJvcmRlcjogNHB4IHNvbGlkICMwMDA7XHJcbiAgICB6LWluZGV4OiAxO1xyXG59XHJcblxyXG5jYW52YXMuZHJhd2luZ0J1ZmZlciB7XHJcbiAgICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgICB3aWR0aDogMzIwcHg7IFxyXG4gICAgaGVpZ2h0OiAyNDBweDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHotaW5kZXg6IDk5OTk7XHJcbiAgICBcclxufVxyXG5cclxuLmJ1dHRvbi1jb250YWluZXIge1xyXG4gICAgbWFyZ2luLXRvcDogMjcwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMjFweDtcclxufVxyXG5cclxuI2JhcmNvZGUtcmVzdWx0IHtcclxuICAgIG1hcmdpbi1sZWZ0OiAxMnB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -163,7 +163,7 @@ module.exports = "h3 {\r\n    text-align: center;\r\n}\r\n\r\nh2 {\r\n    font-s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<select name=\"input-stream_constraints\" id=\"deviceSelection\"></select><br/><br/>\n<button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n<button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n&nbsp;<span id=\"barcode-result\"></span>\n\n<div id=\"scanner\">\n    <div id=\"interactive\" class=\"viewport\">\n        <video></video>\n        <canvas class=\"drawingBuffer\"></canvas>\n    </div>\n</div>\n\n\n\n\n  \n\n"
+module.exports = "\n<button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n<button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n&nbsp;<span id=\"barcode-result\"></span>\n\n<div id=\"scanner\">\n    <div id=\"interactive\" class=\"viewport\">\n        <video></video>\n        <canvas class=\"drawingBuffer\"></canvas>\n    </div>\n</div>\n\n\n\n\n  \n\n"
 
 /***/ }),
 
@@ -192,7 +192,6 @@ var BarcodeComponent = /** @class */ (function () {
     function BarcodeComponent() {
     }
     BarcodeComponent.prototype.ngOnInit = function () {
-        initCameraSelection();
     };
     BarcodeComponent.prototype.startScanner = function () {
         var settings = {
@@ -222,14 +221,14 @@ var BarcodeComponent = /** @class */ (function () {
                     result.boxes.filter(function (box) {
                         return box !== result.box;
                     }).forEach(function (box) {
-                        Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 2 });
+                        Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 3 });
                     });
                 }
                 if (result.box) {
-                    Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "#00F", lineWidth: 2 });
+                    Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 3 });
                 }
                 if (result.codeResult && result.codeResult.code) {
-                    Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 3 });
+                    Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 4 });
                 }
             }
         });
@@ -252,26 +251,6 @@ var BarcodeComponent = /** @class */ (function () {
     return BarcodeComponent;
 }());
 
-function initCameraSelection() {
-    var streamLabel = Quagga.CameraAccess.getActiveStreamLabel();
-    return Quagga.CameraAccess.enumerateVideoDevices()
-        .then(function (devices) {
-        function pruneText(text) {
-            return text.length > 30 ? text.substr(0, 30) : text;
-        }
-        var $deviceSelection = document.getElementById("deviceSelection");
-        while ($deviceSelection.firstChild) {
-            $deviceSelection.removeChild($deviceSelection.firstChild);
-        }
-        devices.forEach(function (device) {
-            var $option = document.createElement("option");
-            $option.value = device.deviceId || device.id;
-            $option.appendChild(document.createTextNode(pruneText(device.label || device.deviceId || device.id)));
-            $option.selected = streamLabel === device.label;
-            $deviceSelection.appendChild($option);
-        });
-    });
-}
 
 
 /***/ }),

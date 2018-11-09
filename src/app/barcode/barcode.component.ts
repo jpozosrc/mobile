@@ -12,7 +12,7 @@ export class BarcodeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    initCameraSelection();
+
   }
 
   startScanner() : void {
@@ -52,16 +52,16 @@ export class BarcodeComponent implements OnInit {
               result.boxes.filter(function (box) {
                   return box !== result.box;
               }).forEach(function (box) {
-                  Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 2});
+                  Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 3});
               });
           }
 
           if (result.box) {
-              Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
+              Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 3});
           }
 
           if (result.codeResult && result.codeResult.code) {
-              Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
+              Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 4});
           }
       }
     });
@@ -77,27 +77,5 @@ export class BarcodeComponent implements OnInit {
     Quagga.stop();
   }
 
-}
-
-function initCameraSelection() {
-  var streamLabel = Quagga.CameraAccess.getActiveStreamLabel();
-
-  return Quagga.CameraAccess.enumerateVideoDevices()
-  .then(function(devices) {
-      function pruneText(text) {
-          return text.length > 30 ? text.substr(0, 30) : text;
-      }
-      var $deviceSelection = document.getElementById("deviceSelection");
-      while ($deviceSelection.firstChild) {
-          $deviceSelection.removeChild($deviceSelection.firstChild);
-      }
-      devices.forEach(function(device) {
-          var $option = document.createElement("option");
-          $option.value = device.deviceId || device.id;
-          $option.appendChild(document.createTextNode(pruneText(device.label || device.deviceId || device.id)));
-          $option.selected = streamLabel === device.label;
-          $deviceSelection.appendChild($option);
-      });
-  });
 }
 
