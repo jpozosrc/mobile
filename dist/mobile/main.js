@@ -268,9 +268,9 @@ function startVideo() {
                 console.log(err);
                 return;
             }
+            Quagga.start();
             video = document.getElementById('video-player');
             video.srcObject = stream;
-            Quagga.start();
         });
     })
         .catch(function (err) {
