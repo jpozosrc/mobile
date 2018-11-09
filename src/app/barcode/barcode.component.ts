@@ -24,7 +24,7 @@ export class BarcodeComponent implements OnInit {
       inputStream: { 
         type: 'LiveStream', 
         target: document.querySelector('#video-player'),
-        //constraints: { facingMode : "environment", height: { min: 480 }, width: { min: 640 }, aspectRatio : { min: 1 , max: 100 } }
+        constraints: { facingMode : "environment" }
       },
       
       locator: { patchSize: "medium", halfSample: true },
@@ -66,6 +66,10 @@ export class BarcodeComponent implements OnInit {
       }
     });
 
+    Quagga.onDetected(function(result) {
+        var code = document.getElementById('barcode-result');
+        code.innerText = result.codeResult.code;
+    });
     
   }
 

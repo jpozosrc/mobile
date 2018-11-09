@@ -25,10 +25,11 @@ button {
     width: 100%;
 }
 
+
 div#scanner {
     position: absolute;
     width: 100%;
-    top: 100px;
+    top: 180px;
 }
 
 video {
@@ -39,6 +40,7 @@ video {
     left: 18px;
     top: 12px;
     border: 4px solid #000;
+    z-index: 1;
 }
 
 canvas.drawingBuffer {
@@ -48,6 +50,8 @@ canvas.drawingBuffer {
     position: absolute;
     left: 22px;
     top: 16px;
+    z-index: 9999;
+    
 }
 
 .button-container {
