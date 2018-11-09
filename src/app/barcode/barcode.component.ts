@@ -19,7 +19,7 @@ export class BarcodeComponent implements OnInit {
 
     let settings = {
       decoder: { readers: ["code_128_reader", "code_39_reader"] },
-      frequency: 10,
+      frequency: 2,
       locate: true,
       inputStream: { 
         type: 'LiveStream', 
