@@ -325,22 +325,19 @@ function startVideo() {
         })*/
 }
 function stopVideo() {
-    try {
-        Quagga.stop();
-    }
-    catch (_a) {
-        return; // Intentionally suppressed
-    }
-    /*
-      if(video.srcObject) {
-        let tracks = video.srcObject.getTracks();
-        
-        if(tracks && tracks[0]) {
-          let track = tracks[0];
-          track.stop();
+    //try {
+    //Quagga.stop();
+    //}
+    //catch {
+    //  return; // Intentionally suppressed
+    //}
+    if (video.srcObject) {
+        var tracks = video.srcObject.getTracks();
+        if (tracks && tracks[0]) {
+            var track = tracks[0];
+            track.stop();
         }
-      }
-    */
+    }
     video.srcObject = null;
     var canvas = document.getElementById('scanner-canvas');
     var context = canvas.getContext('2d');

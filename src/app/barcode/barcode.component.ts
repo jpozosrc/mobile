@@ -173,13 +173,13 @@ function startVideo() {
 
 function stopVideo() {
   
-  try {
-    Quagga.stop();
-  }
-  catch {
-    return; // Intentionally suppressed
-  }
-/*
+  //try {
+    //Quagga.stop();
+  //}
+  //catch {
+  //  return; // Intentionally suppressed
+  //}
+
   if(video.srcObject) {
     let tracks = video.srcObject.getTracks();
     
@@ -188,7 +188,7 @@ function stopVideo() {
       track.stop();
     }
   }
-*/
+
   video.srcObject = null;
   var canvas = document.getElementById('scanner-canvas') as HTMLCanvasElement;
   const context = canvas.getContext('2d');
