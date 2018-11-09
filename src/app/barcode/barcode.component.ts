@@ -50,17 +50,7 @@ function startVideo() {
   };
 
 
-  Quagga.init(settings, function(err) {
   
-    if (err) {
-        console.log(err);
-        return
-    }
-
-    Quagga.start();
-
-
-  });
 
 
     Quagga.onDetected(function(result) {
@@ -114,6 +104,21 @@ function startVideo() {
       .then(function(stream) {
         video = document.getElementById('video-player') as HTMLVideoElement;
         video.srcObject = stream;
+
+
+        Quagga.init(settings, function(err) {
+  
+          if (err) {
+              console.log(err);
+              return
+          }
+      
+          Quagga.start();
+      
+      
+        });
+
+
       })
       .catch(function(err){
         alert(err);

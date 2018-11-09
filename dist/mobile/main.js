@@ -227,13 +227,6 @@ function startVideo() {
         },
         locator: { patchSize: "medium" },
     };
-    Quagga.init(settings, function (err) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        Quagga.start();
-    });
     Quagga.onDetected(function (result) {
         console.log(result.codeResult.code);
         if (this.barcode != result.codeResult.code) {
@@ -272,6 +265,13 @@ function startVideo() {
         .then(function (stream) {
         video = document.getElementById('video-player');
         video.srcObject = stream;
+        Quagga.init(settings, function (err) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            Quagga.start();
+        });
     })
         .catch(function (err) {
         alert(err);
