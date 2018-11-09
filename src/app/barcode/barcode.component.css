@@ -27,14 +27,14 @@ button {
 
 div#scanner {
     position: absolute;
-    width: 100%;
+    width: 350px;
     top: 150px;
 }
 
 video {
     border-radius: 6px;
     height: 240px; 
-    width: 330px; 
+    width: 100%; 
     position: absolute;
     border: 4px solid #000;
 }
@@ -42,7 +42,7 @@ video {
 canvas.drawingBuffer {
     border-radius: 6px;
     height: 240px; 
-    width: 330px; 
+    width: 100%; 
     position: absolute;
 }
 
