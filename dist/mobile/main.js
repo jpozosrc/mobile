@@ -220,6 +220,7 @@ function startVideo() {
     var settings = {
         decoder: { readers: ["code_128_reader", "code_39_reader"] },
         locate: true,
+        numOfWorkers: 4,
         inputStream: {
             name: 'Live',
             type: 'LiveStream',
@@ -263,14 +264,14 @@ function startVideo() {
     };
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function (stream) {
+        video = document.getElementById('video-player');
+        video.srcObject = stream;
         Quagga.init(settings, function (err) {
             if (err) {
                 console.log(err);
                 return;
             }
             Quagga.start();
-            video = document.getElementById('video-player');
-            video.srcObject = stream;
         });
     })
         .catch(function (err) {

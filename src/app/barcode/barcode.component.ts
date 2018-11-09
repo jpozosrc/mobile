@@ -40,6 +40,7 @@ function startVideo() {
   let settings = {
     decoder: { readers: ["code_128_reader", "code_39_reader"] },
     locate: true,
+    numOfWorkers: 4,
     inputStream: { 
       name: 'Live', 
       type: 'LiveStream', 
@@ -103,6 +104,9 @@ function startVideo() {
     navigator.mediaDevices.getUserMedia(constraints)
       .then(function(stream) {
         
+        video = document.getElementById('video-player') as HTMLVideoElement;
+        video.srcObject = stream;
+
         Quagga.init(settings, function(err) {
   
           if (err) {
@@ -110,9 +114,9 @@ function startVideo() {
               return
           }
       
+          
           Quagga.start();
-          video = document.getElementById('video-player') as HTMLVideoElement;
-          video.srcObject = stream;      
+      
       
         });
         
