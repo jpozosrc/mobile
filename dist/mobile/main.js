@@ -268,10 +268,10 @@ function startVideo() {
                 console.log(err);
                 return;
             }
+            video = document.getElementById('video-player');
+            video.srcObject = stream;
             Quagga.start();
         });
-        video = document.getElementById('video-player');
-        video.srcObject = stream;
     })
         .catch(function (err) {
         alert(err);

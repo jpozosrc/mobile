@@ -110,14 +110,15 @@ function startVideo() {
               return
           }
       
+          video = document.getElementById('video-player') as HTMLVideoElement;
+          video.srcObject = stream;
           Quagga.start();
       
       
         });
         
         
-        video = document.getElementById('video-player') as HTMLVideoElement;
-        video.srcObject = stream;
+        
 
 
         
