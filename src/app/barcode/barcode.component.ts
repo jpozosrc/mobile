@@ -102,10 +102,7 @@ function startVideo() {
     
     navigator.mediaDevices.getUserMedia(constraints)
       .then(function(stream) {
-        video = document.getElementById('video-player') as HTMLVideoElement;
-        video.srcObject = stream;
-
-
+        
         Quagga.init(settings, function(err) {
   
           if (err) {
@@ -117,6 +114,13 @@ function startVideo() {
       
       
         });
+        
+        
+        video = document.getElementById('video-player') as HTMLVideoElement;
+        video.srcObject = stream;
+
+
+        
 
 
       })

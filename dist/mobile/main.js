@@ -263,8 +263,6 @@ function startVideo() {
     };
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function (stream) {
-        video = document.getElementById('video-player');
-        video.srcObject = stream;
         Quagga.init(settings, function (err) {
             if (err) {
                 console.log(err);
@@ -272,6 +270,8 @@ function startVideo() {
             }
             Quagga.start();
         });
+        video = document.getElementById('video-player');
+        video.srcObject = stream;
     })
         .catch(function (err) {
         alert(err);
