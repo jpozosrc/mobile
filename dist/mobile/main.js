@@ -163,7 +163,7 @@ module.exports = "h3 {\r\n    text-align: center;\r\n}\r\n\r\nh2 {\r\n    font-s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n<button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n&nbsp;<span id=\"barcode-result\"></span>\n\n<div id=\"scanner\">\n    <div id=\"interactive\" class=\"viewport\">\n        <video></video>\n        <canvas class=\"drawingBuffer\"></canvas>\n    </div>\n</div>\n\n\n\n\n  \n\n"
+module.exports = "\n<button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n<button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n&nbsp;<span id=\"barcode-result\"></span>\n\n<div id=\"scanner\">\n    <div id=\"interactive\" class=\"viewport\">\n        <video controls=\"true\"></video>\n        <canvas class=\"drawingBuffer\"></canvas>\n    </div>\n</div>\n\n\n\n\n  \n\n"
 
 /***/ }),
 
