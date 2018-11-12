@@ -24,3 +24,11 @@
 a:visited {
     color: #ffffff;
 }
+
+
+.view-header {
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}

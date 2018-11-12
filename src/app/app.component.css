@@ -6,8 +6,8 @@ a:visited {
 .header {
     background-image: url('/assets/logo.png');
     background-repeat: no-repeat;
-    height: 70px;
-    margin-bottom: 20px;
+    height: 45px;
+    margin-bottom: 10px;
 }
 
 #hamburger-menu {
@@ -16,3 +16,4 @@ a:visited {
     background-image: url('/assets/hamburger.png');
     float: right;
 }
+
