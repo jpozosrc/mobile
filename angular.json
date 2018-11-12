@@ -90,7 +90,8 @@
               "src/manifest.json",
               "src/Web.config",
               "src/manifest.json",
-              "src/sw.js"
+              "src/sw.js",
+              "src/single-page-icon.png"
             ]
           }
         },
