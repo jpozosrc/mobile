@@ -54,3 +54,11 @@ canvas.drawingBuffer {
     margin-left: 12px;
     font-weight: bold;
 }
+
+.in-progress {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    color: red;
+    font-style: italic;
+}

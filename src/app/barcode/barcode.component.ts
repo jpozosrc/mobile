@@ -15,8 +15,11 @@ export class BarcodeComponent implements OnInit {
 
   }
 
+  msg : string = '';
+
   startScanner() : void {
 
+    this.msg = 'Scanning...';
     let settings = {
       decoder: { readers: ["code_128_reader", "code_39_reader"] },
       frequency: 3,
@@ -75,6 +78,7 @@ export class BarcodeComponent implements OnInit {
 
   stopScanner() : void {
     Quagga.stop();
+    this.msg = '';
   }
 
 }
